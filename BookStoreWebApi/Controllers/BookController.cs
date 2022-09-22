@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using BookStoreWebApi.DbOperations;
 using BookStoreWebApi.BookOperations.GetBooks;
+using BookStoreWebApi.BookOperations.CreateBook;
+using static BookStoreWebApi.BookOperations.CreateBook.CreateBookCommand;
 
 namespace BookStoreWebApi.AddControllers
 {
@@ -44,38 +46,23 @@ namespace BookStoreWebApi.AddControllers
 
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] Book newBook)
+        public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Title == newBook.Title);
-
-            if (book is not null)
+            CreateBookCommand command = new CreateBookCommand(_context);
+            try
             {
-                return BadRequest();
+
+                command.Model = newBook;
+                command.Handle();
+
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+
+                return BadRequest(ex.Message);
             }
 
-            _context.Books.Add(newBook);
-            _context.SaveChanges();
-            return Ok();
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, [FromBody] Book updatedBook)
-        {
-            var book = _context.Books.SingleOrDefault(x => x.Id == id);
-            if (book is null)
-            {
-                return BadRequest();
-            }
-
-            //default dan farklı mı diye bakmak: örn int se 0 dan farklı mı diye bakmak değer değiştirilmiş mi doldurulmuş mu? 
-
-            book.GenreId = updatedBook.GenreId != default ? updatedBook.GenreId : book.GenreId;
-            book.PageCount = updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount;
-            book.PublishDate = updatedBook.PublishDate != default ? updatedBook.PublishDate : book.PublishDate;
-            book.Title = updatedBook.Title != default ? updatedBook.Title : book.Title;
-
-            _context.SaveChanges();
-            return Ok();
         }
 
         [HttpDelete("{id}")]
