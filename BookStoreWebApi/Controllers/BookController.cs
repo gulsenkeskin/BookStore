@@ -8,24 +8,7 @@ namespace BookStoreWebApi.AddControllers
     [Route("[controller]s")]
     public class BookController : ControllerBase
     {
-        private static List<Book> BookList = new List<Book>(){
-            new Book{
-                Id=1,
-                Title="Learn Startup",
-                GenreId=1,
-                PageCount=200,
-                PublishDate=new DateTime(2001,06,12)
-            },
-               new Book{
-                Id=2,
-                Title="Herland",
-                GenreId=2,
-                PageCount=250,
-                PublishDate=new DateTime(2001,06,12)
-            }
-
-
-    };
+        private static List<Book> BookList = new List<Book>();
 
 
         [HttpGet]
@@ -48,6 +31,40 @@ namespace BookStoreWebApi.AddControllers
         //     var book = BookList.Where(book => book.Id == Convert.ToInt32(id)).SingleOrDefault();
         //     return book;
         // }
+
+
+        [HttpPost]
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            var book = BookList.SingleOrDefault(x => x.Title == newBook.Title);
+
+            if (book is not null)
+            {
+                return BadRequest();
+            }
+
+            BookList.Add(newBook);
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook(int id, [FromBody] Book updatedBook)
+        {
+            var book = BookList.SingleOrDefault(x => x.Id == id);
+            if (book is null)
+            {
+                return BadRequest();
+            }
+
+            //default dan farklı mı diye bakmak: örn int se 0 dan farklı mı diye bakmak değer değiştirilmiş mi doldurulmuş mu? 
+
+            book.GenreId = updatedBook.GenreId != default ? updatedBook.GenreId : book.GenreId;
+            book.PageCount = updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount;
+            book.PublishDate = updatedBook.PublishDate != default ? updatedBook.PublishDate : book.PublishDate;
+            book.Title = updatedBook.Title != default ? updatedBook.Title : book.Title;
+
+            return Ok();
+        }
 
     }
 }
