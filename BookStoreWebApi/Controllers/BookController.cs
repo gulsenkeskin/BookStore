@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace BookStoreWebApi.AddControllers
 {
@@ -25,6 +26,22 @@ namespace BookStoreWebApi.AddControllers
 
 
     };
+
+
+        [HttpGet]
+        public List<Book> GetBooks()
+        {
+            var bookList = BookList.OrderBy(x => x.Id).ToList<Book>();
+            return bookList;
+        }
+
+        [HttpGet("{id}")]
+        public Book? GetById(int id)
+        {
+            var book = BookList.Where(book => book.Id == id).SingleOrDefault();
+            return book;
+        }
+
     }
 }
 
