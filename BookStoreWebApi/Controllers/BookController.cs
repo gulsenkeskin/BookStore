@@ -28,17 +28,24 @@ namespace BookStoreWebApi.AddControllers
     };
 
 
-        [HttpGet]
-        public List<Book> GetBooks()
-        {
-            var bookList = BookList.OrderBy(x => x.Id).ToList<Book>();
-            return bookList;
-        }
+        // [HttpGet]
+        // public List<Book> GetBooks()
+        // {
+        //     var bookList = BookList.OrderBy(x => x.Id).ToList<Book>();
+        //     return bookList;
+        // }
 
         [HttpGet("{id}")]
         public Book? GetById(int id)
         {
             var book = BookList.Where(book => book.Id == id).SingleOrDefault();
+            return book;
+        }
+
+        [HttpGet]
+        public Book? Get([FromQuery] string id)
+        {
+            var book = BookList.Where(book => book.Id == Convert.ToInt32(id)).SingleOrDefault();
             return book;
         }
 
