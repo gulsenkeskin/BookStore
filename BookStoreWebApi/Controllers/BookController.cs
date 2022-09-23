@@ -31,10 +31,22 @@ namespace BookStoreWebApi.AddControllers
         }
 
         [HttpGet("{id}")]
-        public Book? GetById(int id)
+        public IActionResult GetById(int id)
         {
-            var book = _context.Books.Where(book => book.Id == id).SingleOrDefault();
-            return book;
+            BookDetailViewModel result;
+
+            try
+            {
+                GetBookDetailQuery query = new GetBookDetailQuery(_context);
+                query.BookId = id;
+                result = query.Handle();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok(result);
         }
 
         // [HttpGet]

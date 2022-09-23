@@ -25,12 +25,9 @@ namespace BookStoreWebApi.BookOperations.GetBooks
                     PublishDate = book.PublishDate.Date.ToString("dd/MM/yyyy"),
                     PageCount = book.PageCount,
                 });
-                return vm;
             }
+            return vm;
 
-
-
-            return bookList;
         }
 
     }

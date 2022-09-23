@@ -15,7 +15,7 @@ namespace BookStoreWebApi.BookOperations.CreateBook
         public void Handle()
         {
 
-            var book = _dbContext.Books.SingleOrDefault(x => x.Title == newBook.Title);
+            var book = _dbContext.Books.SingleOrDefault(x => x.Title == Model.Title);
 
             if (book is not null)
             {
