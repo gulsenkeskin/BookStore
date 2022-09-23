@@ -8,9 +8,11 @@ using static BookStoreWebApi.BookOperations.CreateBook.CreateBookCommand;
 using BookStoreWebApi.BookOperations.UpdateBook;
 using static BookStoreWebApi.BookOperations.UpdateBook.UpdateBookCommand;
 using BookStoreWebApi.BookOperations.DeleteBook;
+using AutoMapper;
 
 namespace BookStoreWebApi.AddControllers
 {
+
     [ApiController]
     [Route("[controller]s")]
     public class BookController : ControllerBase
@@ -18,9 +20,12 @@ namespace BookStoreWebApi.AddControllers
         //readonly değişkenler sadece constructor içinde set edilebilirler
         private readonly BookStoreDbContext _context;
 
-        public BookController(BookStoreDbContext context)
+        private readonly IMapper _mapper;
+
+        public BookController(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
 
