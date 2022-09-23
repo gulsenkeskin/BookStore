@@ -5,6 +5,8 @@ using BookStoreWebApi.DbOperations;
 using BookStoreWebApi.BookOperations.GetBooks;
 using BookStoreWebApi.BookOperations.CreateBook;
 using static BookStoreWebApi.BookOperations.CreateBook.CreateBookCommand;
+using BookStoreWebApi.BookOperations.UpdateBook;
+using static BookStoreWebApi.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace BookStoreWebApi.AddControllers
 {
@@ -67,13 +69,31 @@ namespace BookStoreWebApi.AddControllers
                 command.Model = newBook;
                 command.Handle();
 
-                return Ok();
             }
             catch (System.Exception ex)
             {
 
                 return BadRequest(ex.Message);
             }
+            return Ok();
+
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
+        {
+            try
+            {
+                UpdateBookCommand command = new UpdateBookCommand(_context);
+                command.BookId = id;
+                command.Model = updatedBook;
+                command.Handle();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            return Ok();
 
         }
 
