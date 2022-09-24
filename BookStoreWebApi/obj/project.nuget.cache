@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "nCYj9gaPzuSFEZKg8G3okp8aqba8jk2LBbJtmnycZPFy3nTqnhWwueFlgH1JzsPpQRWNx4aT+b+jZiYgzhphgw==",
+  "dgSpecHash": "QTBFcQFxEqGP2jZaXNc0QaWdjIKyNlfUNpYzIUklh0tPL77QgTlENjlS2k/ebsA2sFqlWVRY6vQWW+NGP4lpEg==",
   "success": true,
   "projectFilePath": "C:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\harmo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\harmo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\harmo\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\harmo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\harmo\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
     "C:\\Users\\harmo\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.9\\microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
