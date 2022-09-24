@@ -50,7 +50,7 @@ namespace BookStoreWebApi.AddControllers
                 GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
                 query.BookId = id;
 
-                GetBookDetailQueryValidator validator = new GetBookDetailQueryValidator;
+                GetBookDetailQueryValidator validator = new GetBookDetailQueryValidator();
                 validator.ValidateAndThrow(query);
 
                 result = query.Handle();
