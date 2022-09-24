@@ -80,6 +80,7 @@ namespace BookStoreWebApi.AddControllers
                 ValidationResult result = validator.Validate(command);
                 //valide et ve hatayı throw et
                 validator.ValidateAndThrow(command);
+                command.Handle();
                 // if (!result.IsValid)
                 // {
                 //     foreach (var item in result.Errors)
