@@ -1,4 +1,5 @@
 using AutoMapper;
+using static BookStoreWebApi.BookOperations.CreateBook.CreateBookCommand;
 
 namespace BookStoreWebApi.Common
 {
@@ -6,6 +7,7 @@ namespace BookStoreWebApi.Common
     {
         public MappingProfile()
         {
+            CreateMap<CreateBookModel, Book>();
 
         }
     }
