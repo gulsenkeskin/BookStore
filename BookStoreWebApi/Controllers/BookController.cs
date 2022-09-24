@@ -10,6 +10,7 @@ using static BookStoreWebApi.BookOperations.UpdateBook.UpdateBookCommand;
 using BookStoreWebApi.BookOperations.DeleteBook;
 using AutoMapper;
 using FluentValidation.Results;
+using FluentValidation;
 
 namespace BookStoreWebApi.AddControllers
 {
@@ -77,28 +78,25 @@ namespace BookStoreWebApi.AddControllers
                 //validator
                 CreateBookCommandValidator validator = new CreateBookCommandValidator();
                 ValidationResult result = validator.Validate(command);
-                if (!result.IsValid)
-                {
-                    foreach (var item in result.Errors)
-                    {
-                        //item.PropertyName : hangi fieldda hata olduğunu söyler
-                        Console.WriteLine("Özellik " + item.PropertyName + "- Error Message" + item.ErrorMessage);
+                //valide et ve hatayı throw et
+                validator.ValidateAndThrow(command);
+                // if (!result.IsValid)
+                // {
+                //     foreach (var item in result.Errors)
+                //     {
+                //         //item.PropertyName : hangi fieldda hata olduğunu söyler
+                //         Console.WriteLine("Özellik " + item.PropertyName + "- Error Message" + item.ErrorMessage);
 
-                    }
-                }
-                else
-                {
-                    command.Handle();
+                //     }
+                // }
+                // else
+                // {
+                //     command.Handle();
 
-                }
-
-
-
-
+                // }
             }
             catch (System.Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
             return Ok();
