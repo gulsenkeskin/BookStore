@@ -9,6 +9,7 @@ using BookStoreWebApi.BookOperations.UpdateBook;
 using static BookStoreWebApi.BookOperations.UpdateBook.UpdateBookCommand;
 using BookStoreWebApi.BookOperations.DeleteBook;
 using AutoMapper;
+using FluentValidation.Results;
 
 namespace BookStoreWebApi.AddControllers
 {
@@ -73,7 +74,26 @@ namespace BookStoreWebApi.AddControllers
             {
 
                 command.Model = newBook;
-                command.Handle();
+                //validator
+                CreateBookCommandValidator validator = new CreateBookCommandValidator();
+                ValidationResult result = validator.Validate(command);
+                if (!result.IsValid)
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        //item.PropertyName : hangi fieldda hata olduğunu söyler
+                        Console.WriteLine("Özellik " + item.PropertyName + "- Error Message" + item.ErrorMessage);
+
+                    }
+                }
+                else
+                {
+                    command.Handle();
+
+                }
+
+
+
 
             }
             catch (System.Exception ex)
