@@ -25,11 +25,12 @@ namespace BookStoreWebApi.BookOperations.CreateBook
                 throw new InvalidOperationException("Bu Kitap Sisteme Kayıtlı");
             }
 
-            book = new Book();
-            book.Title = Model.Title;
-            book.PublishDate = Model.PublishDate;
-            book.PageCount = Model.PageCount;
-            book.GenreId = Model.GenreId;
+            //Model deki veriyi Book objesine convert eder
+            book = _mapper.Map<Book>(Model); //new Book();
+            // book.Title = Model.Title;
+            // book.PublishDate = Model.PublishDate;
+            // book.PageCount = Model.PageCount;
+            // book.GenreId = Model.GenreId;
 
 
             _dbContext.Books.Add(book);
