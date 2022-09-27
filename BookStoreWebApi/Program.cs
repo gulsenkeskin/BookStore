@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using BookStoreWebApi.DbOperations;
 using System.Reflection;
+using BookStoreWebApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCustomExceptionMiddle();
+app.UseCustomExceptionMiddleware();
 
 app.Run();

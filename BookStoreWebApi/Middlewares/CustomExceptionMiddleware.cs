@@ -68,7 +68,7 @@ namespace BookStoreWebApi.Middlewares
 
     public static class CustomExceptionMiddlewareExtension
     {
-        public static IApplicationBuilder UseCustomExceptionMiddle(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseCustomExceptionMiddleware(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<CustomExceptionMiddleware>();
         }
