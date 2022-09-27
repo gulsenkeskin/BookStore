@@ -28,7 +28,7 @@ namespace BookStoreWebApi.Middlewares
                 watch.Stop();
 
                 //response log
-                message = "[Response] HTTP " + context.Request.Method + " - " + context.Request.Path + " responded" + context.Response.StatusCode + " in" + watch.Elapsed.TotalMilliseconds + "ms";
+                message = "[Response] HTTP " + context.Request.Method + " - " + context.Request.Path + " responded " + context.Response.StatusCode + " in " + watch.Elapsed.TotalMilliseconds + "ms";
                 Console.WriteLine(message);
             }
             catch (System.Exception ex)
@@ -52,7 +52,7 @@ namespace BookStoreWebApi.Middlewares
             context.Response.StatusCode = Convert.ToInt32(HttpStatusCode.InternalServerError);
 
             //hata durumunda geriye dönülecek ve log'a yazılacak mesaj
-            string message = "[Error]   HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message " + ex.Message + " in" + watch.Elapsed.TotalMilliseconds + " ms";
+            string message = "[Error]   HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message " + ex.Message + " in " + watch.Elapsed.TotalMilliseconds + " ms";
 
             Console.WriteLine(message);
 
