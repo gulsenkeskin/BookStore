@@ -47,14 +47,14 @@ namespace BookStoreWebApi.Middlewares
 
         private Task HandleException(HttpContext context, Exception ex, Stopwatch watch)
         {
-            //hata durumunda geriye dönülecek ve log'a yazılacak mesaj
-            string message = "[Error]   HTTP " + context.Request.Method + " - " + context.Response.StatusCode + "Error Message" + ex.Message + " in" + watch.Elapsed.TotalMilliseconds + " ms";
-
-            Console.WriteLine(message);
-
             //Hata mesajını anlamlı bir şekilde dönebilmek için context'e yazarız.
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = Convert.ToInt32(HttpStatusCode.InternalServerError);
+
+            //hata durumunda geriye dönülecek ve log'a yazılacak mesaj
+            string message = "[Error]   HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message" + ex.Message + " in" + watch.Elapsed.TotalMilliseconds + " ms";
+
+            Console.WriteLine(message);
 
             //json serileştirme için Newtonsoft paketini kullanırız
             var result = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);
