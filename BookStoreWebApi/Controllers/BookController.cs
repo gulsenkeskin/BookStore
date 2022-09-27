@@ -21,7 +21,6 @@ namespace BookStoreWebApi.AddControllers
     {
         //readonly değişkenler sadece constructor içinde set edilebilirler
         private readonly BookStoreDbContext _context;
-
         private readonly IMapper _mapper;
 
         public BookController(BookStoreDbContext context, IMapper mapper)
@@ -29,8 +28,6 @@ namespace BookStoreWebApi.AddControllers
             _context = context;
             _mapper = mapper;
         }
-
-
 
         [HttpGet]
         public IActionResult GetBooks()
@@ -45,20 +42,13 @@ namespace BookStoreWebApi.AddControllers
         {
             BookDetailViewModel result;
 
-            try
-            {
-                GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
-                query.BookId = id;
+            GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
+            query.BookId = id;
 
-                GetBookDetailQueryValidator validator = new GetBookDetailQueryValidator();
-                validator.ValidateAndThrow(query);
+            GetBookDetailQueryValidator validator = new GetBookDetailQueryValidator();
+            validator.ValidateAndThrow(query);
 
-                result = query.Handle();
-            }
-            catch (System.Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            result = query.Handle();
 
             return Ok(result);
         }
@@ -75,37 +65,15 @@ namespace BookStoreWebApi.AddControllers
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-            try
-            {
+            command.Model = newBook;
 
-                command.Model = newBook;
-                //validator
-                CreateBookCommandValidator validator = new CreateBookCommandValidator();
-                ValidationResult result = validator.Validate(command);
-                //valide et ve hatayı throw et
-                validator.ValidateAndThrow(command);
-                command.Handle();
-                // if (!result.IsValid)
-                // {
-                //     foreach (var item in result.Errors)
-                //     {
-                //         //item.PropertyName : hangi fieldda hata olduğunu söyler
-                //         Console.WriteLine("Özellik " + item.PropertyName + "- Error Message" + item.ErrorMessage);
+            //validator
+            CreateBookCommandValidator validator = new CreateBookCommandValidator();
+            ValidationResult result = validator.Validate(command);
+            validator.ValidateAndThrow(command);
+            command.Handle();
 
-                //     }
-                // }
-                // else
-                // {
-                //     command.Handle();
-
-                // }
-            }
-            catch (System.Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
             return Ok();
-
         }
 
         [HttpPut("{id}")]
@@ -133,19 +101,12 @@ namespace BookStoreWebApi.AddControllers
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
-            try
-            {
-                DeleteBookCommand command = new DeleteBookCommand(_context);
-                command.BookId = id;
-                DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
-                validator.ValidateAndThrow(command);
-                command.Handle();
 
-            }
-            catch (System.Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            DeleteBookCommand command = new DeleteBookCommand(_context);
+            command.BookId = id;
+            DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle();
 
             return Ok();
         }
