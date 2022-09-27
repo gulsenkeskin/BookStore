@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 
 namespace BookStoreWebApi.Middlewares
@@ -12,11 +13,21 @@ namespace BookStoreWebApi.Middlewares
 
         public async Task Invoke(HttpContext context)
         {
+
+            //requeste girip çıktığı süreyi hesaplamak için
+            var watch = Stopwatch.StartNew();
+
+            //request log
             string message = "[Request] HTTP" + context.Request.Method + " - " + context.Request.Path;
             Console.WriteLine(message);
 
             //bi sonraki middleware i çağırmak 
             await _next(context);
+            watch.Stop();
+
+            //response log
+            message = "[Response] HTTP " + context.Request.Method + " - " + context.Request.Path + " responded" + context.Response.StatusCode + " in" + watch.Elapsed.TotalMilliseconds + "ms";
+            Console.WriteLine(message);
 
 
         }
