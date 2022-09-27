@@ -2,15 +2,18 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using System.Net;
 using Newtonsoft.Json;
+using BookStoreWebApi.Services;
 
 namespace BookStoreWebApi.Middlewares
 {
     public class CustomExceptionMiddleware
     {
         private readonly RequestDelegate _next;
-        public CustomExceptionMiddleware(RequestDelegate next)
+        private readonly ILoggerService _loggerService;
+        public CustomExceptionMiddleware(RequestDelegate next, ILoggerService loggerService)
         {
             _next = next;
+            _loggerService = loggerService;
         }
 
         public async Task Invoke(HttpContext context)
@@ -21,7 +24,7 @@ namespace BookStoreWebApi.Middlewares
             {
                 //request log
                 string message = "[Request]  HTTP" + context.Request.Method + " - " + context.Request.Path;
-                Console.WriteLine(message);
+                _loggerService.Write(message);
 
                 //bi sonraki middleware i çağırmak 
                 await _next(context);
@@ -29,7 +32,7 @@ namespace BookStoreWebApi.Middlewares
 
                 //response log
                 message = "[Response] HTTP " + context.Request.Method + " - " + context.Request.Path + " responded " + context.Response.StatusCode + " in " + watch.Elapsed.TotalMilliseconds + "ms";
-                Console.WriteLine(message);
+                _loggerService.Write(message);
             }
             catch (System.Exception ex)
             {
@@ -54,7 +57,7 @@ namespace BookStoreWebApi.Middlewares
             //hata durumunda geriye dönülecek ve log'a yazılacak mesaj
             string message = "[Error]   HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message " + ex.Message + " in " + watch.Elapsed.TotalMilliseconds + " ms";
 
-            Console.WriteLine(message);
+            _loggerService.Write(message);
 
             //json serileştirme için Newtonsoft paketini kullanırız
             var result = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);
