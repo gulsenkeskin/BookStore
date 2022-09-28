@@ -7,7 +7,9 @@ namespace BookStoreWebApi.Application.GenreOperations.Commands.UpdateGenre
         public UpdateGenreCommandValidator()
         {
             RuleFor(command => command.GenreId).GreaterThan(0);
-            RuleFor(command => command.Model.Name).NotEmpty().MinimumLength(2);
+
+            //minimum length 2 olsun ama boş gelmezse 2 olsun
+            RuleFor(command => command.Model.Name).MinimumLength(2).When(x => x.Model.Name.Trim() != string.Empty);
         }
     }
 
