@@ -2,15 +2,15 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using BookStoreWebApi.DbOperations;
-using BookStoreWebApi.BookOperations.GetBooks;
-using BookStoreWebApi.BookOperations.CreateBook;
-using static BookStoreWebApi.BookOperations.CreateBook.CreateBookCommand;
-using BookStoreWebApi.BookOperations.UpdateBook;
-using static BookStoreWebApi.BookOperations.UpdateBook.UpdateBookCommand;
-using BookStoreWebApi.BookOperations.DeleteBook;
 using AutoMapper;
 using FluentValidation.Results;
 using FluentValidation;
+using BookStoreWebApi.Application.BookOperations.GetBooks;
+using static BookStoreWebApi.Application.BookOperations.CreateBook.CreateBookCommand;
+using BookStoreWebApi.Application.BookOperations.CreateBook;
+using static BookStoreWebApi.Application.BookOperations.UpdateBook.UpdateBookCommand;
+using BookStoreWebApi.Application.BookOperations.UpdateBook;
+using BookStoreWebApi.Application.BookOperations.DeleteBook;
 
 namespace BookStoreWebApi.AddControllers
 {

@@ -2,7 +2,7 @@ using BookStoreWebApi.Common;
 using BookStoreWebApi.DbOperations;
 using AutoMapper;
 
-namespace BookStoreWebApi.BookOperations.GetBooks
+namespace BookStoreWebApi.Application.BookOperations.GetBooks
 {
     public class GetBookDetailQuery
     {
