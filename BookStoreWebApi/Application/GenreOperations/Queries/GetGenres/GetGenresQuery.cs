@@ -1,7 +1,7 @@
 using AutoMapper;
 using BookStoreWebApi.DbOperations;
 
-namespace BookStoreWebApi.Application.GenreOperations.Queries
+namespace BookStoreWebApi.Application.GenreOperations.Queries.GetGenres
 {
     public class GetGenresQuery
     {
