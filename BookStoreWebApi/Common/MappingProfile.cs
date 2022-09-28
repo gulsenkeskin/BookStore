@@ -1,5 +1,6 @@
 using AutoMapper;
 using BookStoreWebApi.BookOperations.GetBooks;
+using BookStoreWebApi.Entities;
 using static BookStoreWebApi.BookOperations.CreateBook.CreateBookCommand;
 
 namespace BookStoreWebApi.Common

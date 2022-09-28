@@ -1,6 +1,7 @@
 using AutoMapper;
 using BookStoreWebApi.Common;
 using BookStoreWebApi.DbOperations;
+using BookStoreWebApi.Entities;
 
 namespace BookStoreWebApi.BookOperations.GetBooks
 {

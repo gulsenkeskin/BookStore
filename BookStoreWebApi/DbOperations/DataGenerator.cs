@@ -1,3 +1,4 @@
+using BookStoreWebApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreWebApi.DbOperations
