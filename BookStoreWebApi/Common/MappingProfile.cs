@@ -1,5 +1,8 @@
 using AutoMapper;
 using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
+using BookStoreWebApi.Application.GenreOperations.Queries;
+using BookStoreWebApi.Application.GenreOperations.Queries.GetGenreDetail;
+using BookStoreWebApi.Application.GenreOperations.Queries.GetGenres;
 using BookStoreWebApi.Entities;
 using static BookStoreWebApzi.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
 
@@ -15,6 +18,10 @@ namespace BookStoreWebApi.Common
 
             //buradaki dest booksviewmodel e karşılık gelir
             CreateMap<Book, BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => ((GenreEnum)src.GenreId).ToString()));
+            //Genrenin GenresViewModele dönüştürülebileceğini söyler
+            CreateMap<Genre, GenresViewModel>();
+
+            CreateMap<Genre, GenreDetailViewModel>();
 
         }
     }
