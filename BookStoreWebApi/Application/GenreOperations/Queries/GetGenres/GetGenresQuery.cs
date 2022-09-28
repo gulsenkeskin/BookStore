@@ -13,10 +13,11 @@ namespace BookStoreWebApi.Application.GenreOperations.Queries
             _mapper = mapper;
         }
 
-        public void Handle()
+        public List<GenresViewModel> Handle()
         {
             var genres = _context.Genres.Where(x => x.IsActive).OrderBy(x => x.Id);
-
+            List<GenresViewModel> returnObj = _mapper.Map<List<GenresViewModel>>(genres);
+            return returnObj;
         }
 
     }
