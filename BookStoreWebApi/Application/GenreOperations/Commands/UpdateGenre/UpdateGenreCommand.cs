@@ -5,9 +5,7 @@ namespace BookStoreWebApi.Application.GenreOperations.Commands.UpdateGenre
     public class UpdateGenreCommand
     {
         private readonly BookStoreDbContext _context;
-
         public UpdateGenreModel Model { get; set; }
-
         public int GenreId { get; set; }
 
         public UpdateGenreCommand(BookStoreDbContext context)
@@ -33,7 +31,4 @@ namespace BookStoreWebApi.Application.GenreOperations.Commands.UpdateGenre
     {
         public string Name { get; set; }
     }
-
-
-
 }
