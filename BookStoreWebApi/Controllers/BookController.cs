@@ -5,12 +5,13 @@ using BookStoreWebApi.DbOperations;
 using AutoMapper;
 using FluentValidation.Results;
 using FluentValidation;
-using BookStoreWebApi.Application.BookOperations.GetBooks;
-using static BookStoreWebApi.Application.BookOperations.CreateBook.CreateBookCommand;
-using BookStoreWebApi.Application.BookOperations.CreateBook;
-using static BookStoreWebApi.Application.BookOperations.UpdateBook.UpdateBookCommand;
-using BookStoreWebApi.Application.BookOperations.UpdateBook;
-using BookStoreWebApi.Application.BookOperations.DeleteBook;
+using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
+using static BookStoreWebApzi.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
+using BookStoreWebApzi.Application.BookOperations.Commands.CreateBook;
+using BookStoreWebApi.Application.BookOperations.Commands.CreateBook;
+using static BookStoreWebApi.Application.BookOperations.Commands.UpdateBook.UpdateBookCommand;
+using BookStoreWebApi.Application.BookOperations.Commands.UpdateBook;
+using BookStoreWebApi.Application.BookOperations.Commands.DeleteBook;
 
 namespace BookStoreWebApi.AddControllers
 {

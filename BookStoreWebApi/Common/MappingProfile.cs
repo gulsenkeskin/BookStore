@@ -1,8 +1,7 @@
 using AutoMapper;
-using BookStoreWebApi.Application.BookOperations.GetBooks;
+using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.Entities;
-using static BookStoreWebApi.Application.BookOperations.CreateBook.CreateBookCommand;
-
+using static BookStoreWebApzi.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
 
 namespace BookStoreWebApi.Common
 {

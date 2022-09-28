@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace BookStoreWebApi.Application.BookOperations.UpdateBook
+namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
 {
     //abstract validator'un içine doğrulamak istediğimiz class ı yazarız
     public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>

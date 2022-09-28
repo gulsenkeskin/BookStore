@@ -3,7 +3,7 @@ using BookStoreWebApi.Common;
 using BookStoreWebApi.DbOperations;
 using BookStoreWebApi.Entities;
 
-namespace BookStoreWebApi.Application.BookOperations.GetBooks
+namespace BookStoreWebApi.Application.BookOperations.Queries.GetBooks
 {
     public class GetBooksQuery
     {

@@ -1,6 +1,7 @@
+using BookStoreWebApzi.Application.BookOperations.Commands.CreateBook;
 using FluentValidation;
 
-namespace BookStoreWebApi.Application.BookOperations.CreateBook
+namespace BookStoreWebApi.Application.BookOperations.Commands.CreateBook
 {
 
     // AbstractValidator<CreateBookCommand> : bu validator sınıfı  CreateBookCommand 'ı valide eder anlamına gelir

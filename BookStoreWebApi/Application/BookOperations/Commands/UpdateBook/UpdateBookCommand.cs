@@ -1,6 +1,6 @@
 using BookStoreWebApi.DbOperations;
 
-namespace BookStoreWebApi.Application.BookOperations.UpdateBook
+namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
 {
 
     public class UpdateBookCommand
