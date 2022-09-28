@@ -1,5 +1,6 @@
 using AutoMapper;
 using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
+using BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre;
 using BookStoreWebApi.Application.GenreOperations.Queries;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenres;
@@ -22,6 +23,8 @@ namespace BookStoreWebApi.Common
             CreateMap<Genre, GenresViewModel>();
 
             CreateMap<Genre, GenreDetailViewModel>();
+
+            CreateMap<Genre, CreateGenreModel>();
 
         }
     }
