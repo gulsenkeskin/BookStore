@@ -13,7 +13,7 @@ using static BookStoreWebApi.Application.BookOperations.Commands.UpdateBook.Upda
 using BookStoreWebApi.Application.BookOperations.Commands.UpdateBook;
 using BookStoreWebApi.Application.BookOperations.Commands.DeleteBook;
 
-namespace BookStoreWebApi.AddControllers
+namespace BookStoreWebApi.Controllers
 {
 
     [ApiController]
