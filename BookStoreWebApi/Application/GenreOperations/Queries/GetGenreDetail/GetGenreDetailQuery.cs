@@ -1,4 +1,4 @@
-namespace BookStoreWebApi.Application.GenreOperations.GetGenreDetail
+namespace BookStoreWebApi.Application.GenreOperations.Queries
 {
     public class GetGenreDetailQuery
     {
