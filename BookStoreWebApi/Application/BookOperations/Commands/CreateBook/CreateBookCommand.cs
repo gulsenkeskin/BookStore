@@ -27,7 +27,7 @@ namespace BookStoreWebApzi.Application.BookOperations.Commands.CreateBook
             }
 
             //Model deki veriyi Book objesine convert eder
-            book = _mapper.Map<Book>(Model); //new Book();
+            book = _mapper.Map<Book>(Model);
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
 
