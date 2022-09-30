@@ -1,6 +1,7 @@
 using BookStoreWebApi.Common;
 using BookStoreWebApi.DbOperations;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreWebApi.Application.BookOperations.Queries.GetBooks
 {
@@ -18,7 +19,7 @@ namespace BookStoreWebApi.Application.BookOperations.Queries.GetBooks
 
         public BookDetailViewModel Handle()
         {
-            var book = _dbContext.Books.Where(book => book.Id == BookId).SingleOrDefault();
+            var book = _dbContext.Books.Include(x => x.Genre).Where(book => book.Id == BookId).SingleOrDefault();
             if (book is null)
             {
                 throw new InvalidOperationException("Kitap Bulunamadı");
