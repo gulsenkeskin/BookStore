@@ -1,5 +1,6 @@
 using AutoMapper;
 using BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre;
+using BookStoreWebApi.Application.GenreOperations.Commands.DeleteGenre;
 using BookStoreWebApi.Application.GenreOperations.Commands.UpdateGenre;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenres;
@@ -69,6 +70,18 @@ namespace BookStoreWebApi.Controllers
             return Ok();
         }
 
+        [HttpDelete("id")]
+        public IActionResult DeleteGenre(int id)
+        {
+            DeleteGenreCommand command = new DeleteGenreCommand(_context);
+            command.GenreId = id;
+
+            DeleteGenreCommandValidator validator = new DeleteGenreCommandValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+            return Ok();
+        }
 
 
     }
