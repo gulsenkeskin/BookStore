@@ -46,7 +46,7 @@ namespace BookStoreWebApi.Controllers
         [HttpPost]
         public IActionResult AddGenre([FromBody] CreateGenreModel newGenre)
         {
-            CreateGenreCommand command = new CreateGenreCommand(_context);
+            CreateGenreCommand command = new CreateGenreCommand(_context, _mapper);
             command.Model = newGenre;
 
             CreateGenreCommandValidator validator = new CreateGenreCommandValidator();
