@@ -1,6 +1,7 @@
 using AutoMapper;
 using BookStoreWebApi.Application.AuthorOperations.Commands.CreateAuthor;
 using BookStoreWebApi.Application.AuthorOperations.Commands.UpdateAuthor;
+using BookStoreWebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre;
 using BookStoreWebApi.Application.GenreOperations.Queries;
@@ -31,6 +32,8 @@ namespace BookStoreWebApi.Common
             CreateMap<Author, CreateAuthorModel>();
 
             CreateMap<Author, UpdateAuthorModel>();
+
+            CreateMap<Author, AuthorDetailViewModel>();
 
         }
     }
