@@ -31,7 +31,7 @@ namespace BookStoreWebApi.Controllers
             return Ok(obj);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public ActionResult GetAuthorDetail(int id)
         {
             GetAuthorDetailQuery query = new GetAuthorDetailQuery(_context, _mapper);

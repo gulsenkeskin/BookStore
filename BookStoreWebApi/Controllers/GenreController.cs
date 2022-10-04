@@ -31,7 +31,7 @@ namespace BookStoreWebApi.Controllers
             return Ok(obj);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public ActionResult GenGenreDetail(int id)
         {
             GetGenreDetailQuery query = new GetGenreDetailQuery(_context, _mapper);
