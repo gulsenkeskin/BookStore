@@ -57,7 +57,7 @@ namespace BookStoreWebApi.Controllers
         }
 
 
-        [HttpPost("id")]
+        [HttpPut("id")]
         public IActionResult UpdateGenre(int id, [FromBody] UpdateGenreModel updateGenre)
         {
             UpdateGenreCommand command = new UpdateGenreCommand(_context);
