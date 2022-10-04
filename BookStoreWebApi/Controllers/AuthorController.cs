@@ -57,7 +57,7 @@ namespace BookStoreWebApi.Controllers
         }
 
 
-        [HttpPost("id")]
+        [HttpPut("id")]
         public IActionResult UpdateAuthor(int id, [FromBody] UpdateAuthorModel updateAuthor)
         {
             UpdateAuthorCommand command = new UpdateAuthorCommand(_context);

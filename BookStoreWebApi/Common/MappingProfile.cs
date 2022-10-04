@@ -5,6 +5,7 @@ using BookStoreWebApi.Application.AuthorOperations.Queries.GetAuthor;
 using BookStoreWebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre;
+using BookStoreWebApi.Application.GenreOperations.Commands.UpdateGenre;
 using BookStoreWebApi.Application.GenreOperations.Queries;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenres;
@@ -28,9 +29,11 @@ namespace BookStoreWebApi.Common
 
             CreateMap<Genre, GenreDetailViewModel>();
 
-            CreateMap<Genre, CreateGenreModel>();
+            CreateMap<Genre, UpdateGenreModel>();
 
-            CreateMap<Author, CreateAuthorModel>();
+            CreateMap<CreateGenreModel, Genre>();
+
+            CreateMap<CreateAuthorModel, Author>();
 
             CreateMap<Author, UpdateAuthorModel>();
 
