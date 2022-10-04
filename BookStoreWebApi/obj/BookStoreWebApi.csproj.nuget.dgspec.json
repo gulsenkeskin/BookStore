@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj": {}
+    "C:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj": {
+    "C:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
         "projectName": "BookStoreWebApi",
-        "projectPath": "c:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
+        "projectPath": "C:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
         "packagesPath": "C:\\Users\\harmo\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\obj\\",
+        "outputPath": "C:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\harmo\\AppData\\Roaming\\NuGet\\NuGet.Config",

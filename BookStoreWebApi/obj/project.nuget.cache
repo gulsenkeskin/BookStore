@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YybQ6geMvOs6MVGug3R9RGXGKEtsI5APzd2TNX6JSCPOsZFMNtF01Umvapl9UdESzPk6gBR3IYxUIjvSdrtO5g==",
+  "dgSpecHash": "lf7AkPYXbCR8lbz/Sa/ytjrcO4RiwuMQ52tka07Dl5QxI0YYFvuMsk5uEonFLBuMdK1Osf+k38xilg5YT308YA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
+  "projectFilePath": "C:\\Users\\harmo\\Documents\\my_projects\\Pratikler\\BookStore\\BookStoreWebApi\\BookStoreWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\harmo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\harmo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
