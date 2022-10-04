@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreWebApi", "BookStoreWebApi\BookStoreWebApi.csproj", "{0CC6E474-797C-4AC5-BDD4-EC1AC0210604}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CB2D767A-50CB-4B7F-A1F1-E3B878857A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreWebApi.UnitTests", "Tests\BookStoreWebApi.UnitTests\BookStoreWebApi.UnitTests.csproj", "{12841A78-4CF2-4AB8-9E32-DE7D21264F60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{0CC6E474-797C-4AC5-BDD4-EC1AC0210604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC6E474-797C-4AC5-BDD4-EC1AC0210604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CC6E474-797C-4AC5-BDD4-EC1AC0210604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12841A78-4CF2-4AB8-9E32-DE7D21264F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12841A78-4CF2-4AB8-9E32-DE7D21264F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12841A78-4CF2-4AB8-9E32-DE7D21264F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12841A78-4CF2-4AB8-9E32-DE7D21264F60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12841A78-4CF2-4AB8-9E32-DE7D21264F60} = {CB2D767A-50CB-4B7F-A1F1-E3B878857A0B}
 	EndGlobalSection
 EndGlobal

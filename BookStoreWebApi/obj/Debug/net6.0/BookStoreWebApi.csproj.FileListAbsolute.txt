@@ -5,7 +5,15 @@ C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Deb
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\BookStoreWebApi.runtimeconfig.json
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\BookStoreWebApi.dll
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\BookStoreWebApi.pdb
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -25,11 +33,3 @@ C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Deb
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Debug\net6.0\BookStoreWebApi.pdb
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Debug\net6.0\BookStoreWebApi.genruntimeconfig.cache
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Debug\net6.0\ref\BookStoreWebApi.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\FluentValidation.dll
-C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
