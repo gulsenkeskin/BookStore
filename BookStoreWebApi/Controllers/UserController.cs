@@ -38,7 +38,7 @@ namespace BookStoreWebApi.Controllers
 
             return Ok();
         }
-        [HttpPost]
+        [HttpPost("connect/token")]
         public ActionResult<Token> CreateToken([FromBody] CreateTokenModel login)
         {
             CreateTokenCommand command = new CreateTokenCommand(_context, _mapper, _configuration);
