@@ -36,7 +36,14 @@ namespace BookStoreWebApi.Controllers
 
             return Ok();
         }
-
+        [HttpPost]
+        public ActionResult<Token> CreateToken([FromBody] CreateTokenModel)
+        {
+            CreateTokenCommand command = new CreateTokenCommand(_context, _mapper);
+            command.Model = LoggingBuilderExtensions;
+            var token = command.Handle();
+            return token;
+        }
 
 
 
