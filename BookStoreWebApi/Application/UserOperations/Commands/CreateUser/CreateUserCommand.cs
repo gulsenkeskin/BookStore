@@ -36,10 +36,10 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateUser
         //bir kitap kaydetmek istediğimizde dışardan ne almamız gerekiyorsa onu yazarız
         public class CreateUserModel
         {
-            public string Name { get; set; }
-            public string Surname { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
+            public string? Name { get; set; }
+            public string? Surname { get; set; }
+            public string? Email { get; set; }
+            public string? Password { get; set; }
         }
 
 

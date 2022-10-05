@@ -31,7 +31,7 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
 
         public class UpdateBookModel
         {
-            public string Title { get; set; }
+            public string? Title { get; set; }
             public int GenreId { get; set; }
 
         }
