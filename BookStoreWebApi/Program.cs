@@ -3,11 +3,36 @@ using BookStoreWebApi.DbOperations;
 using System.Reflection;
 using BookStoreWebApi.Middlewares;
 using BookStoreWebApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(opt =>
+{
+    opt.TokenValidationParameters = new TokenValidationParameters
+    {
+        //token'ı kimler kullanabilir
+        ValidateAudience = true,
+        //token ın dağıtıcısı
+        ValidateIssuer = true,
+        ValidateLifetime = true,
+        //token ı imzalayacağımız key i kontrol et
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Token:Issuer"],
+        ValidAudience = builder.Configuration["Token:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey
+        (Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
+        //token ı üreten sunucunun timezone u ile token ı kullanan clientların time zonu birbirinden farklı olduğunda , token in expiration date inin üzerine burda verilen zaman eklenir
+        ClockSkew = TimeSpan.Zero,
+    };
+});
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -27,8 +52,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseAuthentication();
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseAuthorization();
 
