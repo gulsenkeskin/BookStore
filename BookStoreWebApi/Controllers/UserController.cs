@@ -4,6 +4,8 @@ using BookStoreWebApi.DbOperations;
 using Microsoft.AspNetCore.Mvc;
 using static BookStoreWebApi.Application.UserOperations.Commands.CreateUser.CreateUserCommand;
 using Microsoft.Extensions.Configuration;
+using BookStoreWebApi.TokenOperations.Models;
+using BookStoreWebApi.Application.UserOperations.Commands.CreateToken;
 
 namespace BookStoreWebApi.Controllers
 {
@@ -37,10 +39,10 @@ namespace BookStoreWebApi.Controllers
             return Ok();
         }
         [HttpPost]
-        public ActionResult<Token> CreateToken([FromBody] CreateTokenModel)
+        public ActionResult<Token> CreateToken([FromBody] CreateTokenModel login)
         {
-            CreateTokenCommand command = new CreateTokenCommand(_context, _mapper);
-            command.Model = LoggingBuilderExtensions;
+            CreateTokenCommand command = new CreateTokenCommand(_context, _mapper, _configuration);
+            command.Model = login;
             var token = command.Handle();
             return token;
         }

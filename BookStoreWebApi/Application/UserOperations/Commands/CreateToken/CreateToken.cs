@@ -1,6 +1,8 @@
 using AutoMapper;
 using BookStoreWebApi.DbOperations;
 using BookStoreWebApi.Entities;
+using BookStoreWebApi.TokenOperations;
+using BookStoreWebApi.TokenOperations.Models;
 
 namespace BookStoreWebApi.Application.UserOperations.Commands.CreateToken
 {
@@ -17,7 +19,7 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateToken
             _mapper = mapper;
 
         }
-        public void Handle()
+        public Token Handle()
         {
             //token oluşturma
             //user var mı 
@@ -25,6 +27,21 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateToken
             if (user is not null)
             {
                 //token oluştur
+                TokenHandler handler = new TokenHandler(_configuration);
+
+                Token token = handler.CreateAccessToken(user);
+                user.RefreshToken = token.RefreshToken;
+                //bu sırada access token alabilmesi için 5 dakika ekledim
+                user.RefreshTokenExpireDate = token.Expiration.AddMinutes(5);
+
+                _dbContext.SaveChanges();
+
+                return token;
+
+
+
+
+
             }
             else
                 throw new InvalidOperationException("Email ya da şifre hatalı");
