@@ -33,3 +33,10 @@ C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Deb
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Debug\net6.0\BookStoreWebApi.pdb
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Debug\net6.0\BookStoreWebApi.genruntimeconfig.cache
 C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\obj\Debug\net6.0\ref\BookStoreWebApi.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\harmo\Documents\my_projects\Pratikler\BookStore\BookStoreWebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

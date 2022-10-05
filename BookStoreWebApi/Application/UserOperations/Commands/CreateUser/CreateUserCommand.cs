@@ -9,6 +9,7 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateUser
         public CreateUserModel Model { get; set; }
         private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
+
         public CreateUserCommand(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
