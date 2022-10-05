@@ -53,7 +53,7 @@ namespace BookStoreWebApi.Controllers
         [HttpGet("refreshToken")]
         public ActionResult<Token> RefreshToken([FromQuery] string token)
         {
-            RefreshTokenCommand command = new RefreshTokenCommand(_context, _mapper, _configuration);
+            RefreshTokenCommand command = new RefreshTokenCommand(_context, _configuration);
             command.RefreshToken = token;
             var resultToken = command.Handle();
             return resultToken;
