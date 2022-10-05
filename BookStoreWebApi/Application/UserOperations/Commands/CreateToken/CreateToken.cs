@@ -17,6 +17,7 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateToken
         {
             _dbContext = dbContext;
             _mapper = mapper;
+            _configuration = configuration;
 
         }
         public Token Handle()
