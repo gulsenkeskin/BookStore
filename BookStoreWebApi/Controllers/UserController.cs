@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using BookStoreWebApi.TokenOperations.Models;
 using BookStoreWebApi.Application.UserOperations.Commands.CreateToken;
 using Microsoft.AspNetCore.Authorization;
+using BookStoreWebApi.Application.UserOperations.Commands.RefreshToken;
 
 namespace BookStoreWebApi.Controllers
 {
@@ -49,6 +50,14 @@ namespace BookStoreWebApi.Controllers
             return token;
         }
 
+        [HttpGet("refreshToken")]
+        public ActionResult<Token> RefreshToken([FromQuery] string token)
+        {
+            RefreshTokenCommand command = new RefreshTokenCommand(_context, _mapper, _configuration);
+            command.RefreshToken = token;
+            var resultToken = command.Handle();
+            return resultToken;
+        }
 
 
 
