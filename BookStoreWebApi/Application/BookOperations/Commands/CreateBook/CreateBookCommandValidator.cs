@@ -1,4 +1,4 @@
-using BookStoreWebApzi.Application.BookOperations.Commands.CreateBook;
+using BookStoreWebApi.Application.BookOperations.Commands.CreateBook;
 using FluentValidation;
 
 namespace BookStoreWebApi.Application.BookOperations.Commands.CreateBook

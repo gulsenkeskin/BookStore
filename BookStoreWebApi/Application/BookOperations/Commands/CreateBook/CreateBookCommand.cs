@@ -2,7 +2,7 @@ using AutoMapper;
 using BookStoreWebApi.DbOperations;
 using BookStoreWebApi.Entities;
 
-namespace BookStoreWebApzi.Application.BookOperations.Commands.CreateBook
+namespace BookStoreWebApi.Application.BookOperations.Commands.CreateBook
 {
     public class CreateBookCommand
     {

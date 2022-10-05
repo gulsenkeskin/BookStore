@@ -6,12 +6,11 @@ using BookStoreWebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 using BookStoreWebApi.Application.BookOperations.Queries.GetBooks;
 using BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre;
 using BookStoreWebApi.Application.GenreOperations.Commands.UpdateGenre;
-using BookStoreWebApi.Application.GenreOperations.Queries;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using BookStoreWebApi.Application.GenreOperations.Queries.GetGenres;
-using BookStoreWebApi.Application.UserOperations.Commands.CreateUser;
 using BookStoreWebApi.Entities;
-using static BookStoreWebApzi.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
+using static BookStoreWebApi.Application.UserOperations.Commands.CreateUser.CreateUserCommand;
+using static BookStoreWebApi.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
 
 namespace BookStoreWebApi.Common
 {
@@ -42,7 +41,9 @@ namespace BookStoreWebApi.Common
 
             CreateMap<Author, AuthorViewModel>();
 
-            CreateMap<CreateUserCommand, User>();
+            CreateMap<CreateUserModel, User>();
+
+
 
         }
     }
