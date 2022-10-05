@@ -3,6 +3,7 @@ using BookStoreWebApi.Application.UserOperations.Commands.CreateUser;
 using BookStoreWebApi.DbOperations;
 using Microsoft.AspNetCore.Mvc;
 using static BookStoreWebApi.Application.UserOperations.Commands.CreateUser.CreateUserCommand;
+using Microsoft.Extensions.Configuration;
 
 namespace BookStoreWebApi.Controllers
 {
