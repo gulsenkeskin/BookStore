@@ -7,7 +7,7 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
     {
         private readonly BookStoreDbContext _context;
 
-        public UpdateBookModel Model { get; set; }
+        public UpdateBookModel? Model { get; set; }
         public int BookId { get; set; }
 
         public UpdateBookCommand(BookStoreDbContext context)
@@ -22,7 +22,7 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.UpdateBook
             if (book is null)
                 throw new InvalidOperationException("Güncellenecek Kitap Bulunamadı");
 
-            book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
+            book.GenreId = Model!.GenreId != default ? Model.GenreId : book.GenreId;
 
             book.Title = Model.Title != default ? Model.Title : book.Title;
             _context.SaveChanges();

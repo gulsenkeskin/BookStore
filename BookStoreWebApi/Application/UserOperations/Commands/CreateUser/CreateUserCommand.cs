@@ -6,7 +6,7 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateUser
 {
     public class CreateUserCommand
     {
-        public CreateUserModel Model { get; set; }
+        public CreateUserModel? Model { get; set; }
         private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
 
@@ -19,7 +19,7 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateUser
         public void Handle()
         {
 
-            var user = _dbContext.Users.SingleOrDefault(x => x.Email == Model.Email);
+            var user = _dbContext.Users.SingleOrDefault(x => x.Email == Model!.Email);
 
             if (user is not null)
             {

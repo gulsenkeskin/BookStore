@@ -20,10 +20,10 @@ namespace BookStoreWebApi.Common
         {
             CreateMap<CreateBookModel, Book>();
             //Genrenin nasıl oluşturulacağını özel olaraak söyledim
-            CreateMap<Book, BookDetailViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
+            CreateMap<Book, BookDetailViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre!.Name));
 
             //buradaki dest booksviewmodel e karşılık gelir
-            CreateMap<Book, BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
+            CreateMap<Book, BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre!.Name));
             //Genrenin GenresViewModele dönüştürülebileceğini söyler
             CreateMap<Genre, GenresViewModel>();
 

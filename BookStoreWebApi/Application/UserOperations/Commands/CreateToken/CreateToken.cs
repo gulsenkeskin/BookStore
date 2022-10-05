@@ -8,10 +8,10 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateToken
 {
     public class CreateTokenCommand
     {
-        public CreateTokenModel Model { get; set; }
+        public CreateTokenModel? Model { get; set; }
         private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
-        private readonly IConfiguration _configuration;
+        private readonly IConfiguration? _configuration;
 
         public CreateTokenCommand(IBookStoreDbContext dbContext, IMapper mapper, IConfiguration configuration)
         {
@@ -23,11 +23,11 @@ namespace BookStoreWebApi.Application.UserOperations.Commands.CreateToken
         {
             //token oluşturma
             //user var mı 
-            var user = _dbContext.Users.FirstOrDefault(x => x.Email == Model.Email && x.Password == Model.Password);
+            var user = _dbContext.Users.FirstOrDefault(x => x.Email == Model!.Email && x.Password == Model.Password);
             if (user is not null)
             {
                 //token oluştur
-                TokenHandler handler = new TokenHandler(_configuration);
+                TokenHandler handler = new TokenHandler(_configuration!);
 
                 Token token = handler.CreateAccessToken(user);
                 user.RefreshToken = token.RefreshToken;

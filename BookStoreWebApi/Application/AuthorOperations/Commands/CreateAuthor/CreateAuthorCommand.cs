@@ -6,7 +6,7 @@ namespace BookStoreWebApi.Application.AuthorOperations.Commands.CreateAuthor
 {
     public class CreateAuthorCommand
     {
-        public CreateAuthorModel Model { get; set; }
+        public CreateAuthorModel? Model { get; set; }
 
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace BookStoreWebApi.Application.AuthorOperations.Commands.CreateAuthor
 
         public void Handle()
         {
-            var author = _context.Authors.SingleOrDefault(x => x.Name == Model.Name && x.Surname == Model.Surname);
+            var author = _context.Authors.SingleOrDefault(x => x.Name == Model!.Name && x.Surname == Model.Surname);
 
             if (author is not null)
             {

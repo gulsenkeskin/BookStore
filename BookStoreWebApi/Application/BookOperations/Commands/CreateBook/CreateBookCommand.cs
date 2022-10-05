@@ -6,7 +6,7 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.CreateBook
 {
     public class CreateBookCommand
     {
-        public CreateBookModel Model { get; set; }
+        public CreateBookModel? Model { get; set; }
         private readonly BookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public CreateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
@@ -19,7 +19,7 @@ namespace BookStoreWebApi.Application.BookOperations.Commands.CreateBook
         public void Handle()
         {
 
-            var book = _dbContext.Books.SingleOrDefault(x => x.Title == Model.Title);
+            var book = _dbContext.Books.SingleOrDefault(x => x.Title == Model!.Title);
 
             if (book is not null)
             {

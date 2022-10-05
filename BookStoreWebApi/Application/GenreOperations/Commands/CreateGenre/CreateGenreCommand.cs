@@ -6,7 +6,7 @@ namespace BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre
 {
     public class CreateGenreCommand
     {
-        public CreateGenreModel Model { get; set; }
+        public CreateGenreModel? Model { get; set; }
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
 
@@ -18,7 +18,7 @@ namespace BookStoreWebApi.Application.GenreOperations.Commands.CreateGenre
 
         public void Handle()
         {
-            var genre = _context.Genres.SingleOrDefault(x => x.Name == Model.Name);
+            var genre = _context.Genres.SingleOrDefault(x => x.Name == Model!.Name);
 
             if (genre is not null)
             {
