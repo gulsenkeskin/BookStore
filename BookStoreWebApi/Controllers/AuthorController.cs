@@ -6,11 +6,12 @@ using BookStoreWebApi.Application.AuthorOperations.Queries.GetAuthor;
 using BookStoreWebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 using BookStoreWebApi.DbOperations;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreWebApi.Controllers
 {
-
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class AuthorController : ControllerBase

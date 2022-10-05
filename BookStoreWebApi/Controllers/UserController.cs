@@ -6,9 +6,11 @@ using static BookStoreWebApi.Application.UserOperations.Commands.CreateUser.Crea
 using Microsoft.Extensions.Configuration;
 using BookStoreWebApi.TokenOperations.Models;
 using BookStoreWebApi.Application.UserOperations.Commands.CreateToken;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStoreWebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class UserController : ControllerBase
